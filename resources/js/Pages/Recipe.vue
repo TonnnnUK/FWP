@@ -12,7 +12,7 @@ import { Head } from '@inertiajs/inertia-vue3';
                 <h2 class="text-xl font-semibold leading-tight text-gray-800">
                     Meal
                 </h2>
-                <Link :href="route('meals')" class="text-xs">Back to meals</Link>
+                <Link :href="route('meals')" class="text-xs text-blue-600 hover:underline">&laquo; Back to meals</Link>
             </div>
         </template>
 
