@@ -29,10 +29,7 @@ import { Head } from '@inertiajs/inertia-vue3';
     </BreezeAuthenticatedLayout>
 </template>
 
-
 <script>
-
-
 export default 
 {
     props: {'meals': Object}

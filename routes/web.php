@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\MealsController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,11 +38,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('Planner');
     })->name('planner');
 
-    Route::get('/inventory', function () {
-        return Inertia::render('Inventory');
-    })->name('inventory');
+    Route::get('/inventory',  [InventoryController::class, 'index'])
+        ->name('inventory');
 
-    Route::get('/meals', [MealsController::class, 'index']
+    Route::post('/inventory',  [InventoryController::class, 'submit'])
+        ->name('submit-inventory');
+
+Route::get('/meals', [MealsController::class, 'index']
         )->name('meals');
 
     Route::get('/meal/{meal}', [MealsController::class, 'show']
